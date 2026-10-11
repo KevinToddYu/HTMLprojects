@@ -1,28 +1,9 @@
-h1 {
-    text-align: center;
-    font-size: 36px;
+#movie-tabs {
+    width: 80%;
 }
 
-#search {
-    margin-top: 20px;
-    text-align: center;
-}
+#my-content {
+    height: 40rem;
+    overflow-y: scroll;
 
-#search input[type="text"] {
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-}
-
-#search button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-#results {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }

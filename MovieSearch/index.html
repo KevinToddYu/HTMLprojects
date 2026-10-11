@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Search</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/ui-lightness/ljquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,12 +14,36 @@
     <header>
         <h1>Movie Search</h1>
     </header>
-    <main>
-        <input type="text" id="input" placeholder="Search for a movie...">
-        <button id="searchs" onclick="search()">Search</button>
-        <div id="output">
+
+    <body <div class="container-fluid" id="movie-tabs">
+
+        <ul class="nav nav-tabs" id="my-tabs">
+            <li class="nav-itemT">
+                <a class=" nav-link active" id="home-tab" data-toggle="tab" href="#brief-view">Brief View</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#detailed-view">Detailed View</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#reception">Critiques</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="my-content">
+            <div class="tab-pane fade show active" id="brief-view">Brief View Tab ...</div>
+            <div class="tab-pane fade" id="detailed-view">Detailed View tab</div>
+            <div class="tab-pane fade" id="reception">Critical Reception tab</div>
         </div>
-        <script src="main.js"></script>
-        <link rel="stylesheet" href="style.css">
-    </main>
-</body>
+        </div>
+
+
+
+
+
+
+
+        <!--<input type="text" id="input" placeholder="Search for a movie..." -->
+        <!----  style="border-radius: 10px; width:150px;height:25px;">
+        <button id="searchs" onclick="search()"
+            style="background-color: aliceblue; border-radius: 10px; width: 70px; height: 25px;">Search</button>
+        <div id="output">
+        </div>>
