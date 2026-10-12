@@ -1,7 +1,4 @@
 import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
 
 function InputBox({pHolder, value, name, onChange, type='text'}) {
@@ -31,12 +28,13 @@ function LoginPage({ onLogin }) {
   )
 }
 
-function HomePage({ openNot, exit }) {
+function HomePage({ openNot, exit, openRead}) {
   return(
     <div>
     <h1>Welcome home!</h1>
     <ul>
     <li><button onClick={openNot}>Notifications</button></li>
+    <li><button onClick={openRead}>Read</button></li>
     <li><button onClick={exit}>Exit</button></li>
     </ul>
     </div>
@@ -54,29 +52,34 @@ function NotPage({ exit }) {
   )
 }
 
-function App() {
-  //const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  const [pageNum, setPageNum] = useState(1)
-  //const [error, setError] = useState('')
+function ReadPage({exit}) {
+  return(
+    <div>
+    <h1>Read</h1>
+    <ul>
+      <li><button onClick={exit}>Exit</button></li>
+    </ul>
+    </div>
+  )
+}
 
-  //const handSubmit = () => {}
-    //if (!emailPattern.test(form.email)) {
-      //setError('Invalid email address')
-      //return
-    //}
-    //setError('')
-    //setOutput(form.email)
+function App() {
+  const [pageNum, setPageNum] = useState(1)
   if (pageNum == 1) {
     return(
       <LoginPage onLogin={() => setPageNum(2)} />
     )
   } else if (pageNum == 2) {
     return(
-      <HomePage exit={() => setPageNum(1)} openNot={() => setPageNum(3)} />
+      <HomePage exit={() => setPageNum(1)} openNot={() => setPageNum(3)} openRead={() => setPageNum(4)} />
     )
   } else if (pageNum == 3) {
     return(
       <NotPage exit={() => setPageNum(2)} />
+    )
+  } else if (pageNum == 4) {
+    return(
+    <ReadPage exit={() => setPageNum(2)} />
     )
   }
 }
