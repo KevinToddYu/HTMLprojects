@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import './App.css'
 
-function InputBox({pHolder, value, name, onChange, type='text'}) {
+function InputBox({onKeyDown, pHolder, value, name, onChange, type='text'}) {
   return(
   <div>
-  <input name={name} type={type} onChange={onChange} placeholder={pHolder} value={value}></input>
+  <input onKeyDown={onKeyDown} name={name} type={type} onChange={onChange} placeholder={pHolder} value={value}></input>
   </div>
   )
 }
@@ -15,13 +15,17 @@ function LoginPage({ onLogin }) {
   const [output, setOutput] = useState('')
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value})}
-
+  const handleKeyDown = (e) => {
+  if (e.key == 'Enter') {
+     onLogin()
+   }
+  }
   return (
     <div>
     <h1>Email Software</h1>
-    <InputBox pHolder='Email' value={form.email} name='email' onChange={handleChange} />
+    <InputBox onKeyDown={handleKeyDown} pHolder='Email' value={form.email} name='email' onChange={handleChange} />
     <br></br>
-    <InputBox pHolder='Password' value={form.password} name='password' onChange={handleChange} type='password' />
+    <InputBox onKeyDown={handleKeyDown} pHolder='Password' value={form.password} name='password' onChange={handleChange} type='password' />
     <br></br>
     <button onClick={onLogin} style={{ width: '150px'}}>Enter</button>
     </div>
