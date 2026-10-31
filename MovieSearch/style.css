@@ -1,9 +1,14 @@
 #movie-tabs {
-    width: 80%;
+    width: 100%;
+    background-color: lightblue;
 }
 
 #my-content {
     height: 40rem;
     overflow-y: scroll;
 
+}
+
+#header {
+    text-align: center;
 }
